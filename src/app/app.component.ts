@@ -1,18 +1,20 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {HomeComponent} from './home/home.component';
+import {RouterModule} from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HomeComponent],
+  imports: [HomeComponent, RouterModule, FormsModule],
   template: `
   <main>
       <header class="brand-name">
-        <img class="brand-logo" src="/assets/16304.png" alt="logo" aria-hidden="true" style="height:100px;width:100px;"/>
+        <img class="brand-logo" src="/assets/16304.png" alt="logo" aria-hidden="true" style="height:50px;width:50px;"/>
       </header>
       <section class="content">
-        <app-home></app-home>
+        <router-outlet></router-outlet>
       </section>
     </main>
   `,
